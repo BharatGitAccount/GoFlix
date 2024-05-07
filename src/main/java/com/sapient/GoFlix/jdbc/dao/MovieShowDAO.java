@@ -18,12 +18,15 @@ public class MovieShowDAO {
 
     public String createMovieShow(String startDate, String endDate, String startTime, String endTime, String movieName, int movieId,
                                   int theaterId, String theaterName, int basePrice, int screenId){
-        return null;
+        String sql = "INSERT INTO Movie_Show (Movie_ID, Theater_ID, Screen_ID, START_DATE, Start_Time, END_DATE, End_Time, Base_Price) VALUES ("+movieId+", "+theaterId+", "+screenId+", '"+startDate+"', '"+startTime+"', '"+endDate+"', '"+endTime+"', "+basePrice+")";
+
+        jdbcTemplate.execute(sql);
+        return "True";
     }
 
     public String modifyMovieShow(String startDate, String endDate, String startTime, String endTime, String movieName, int movieId,
                                   int theaterId, String theaterName, int basePrice, int screenId){
-        String sql = "INSERT INTO Movie_Show VALUES ("+movieId+", "+theaterId+", "+screenId+", "+startDate+", "+startTime+", "+endDate+", "+endTime+", "+basePrice+")";
+
 
 
         return null;
