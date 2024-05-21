@@ -16,36 +16,10 @@ public class TheaterDAO {
     JdbcTemplate jdbcTemplate;
 
     public List<Theater> listTheatersByCity(int cityId){
-        String sql = "SELECT * FROM Theater WHERE THEATER_ID = " + cityId;
-
-        return jdbcTemplate.query(sql, new RowMapper<Theater>() {
-            @Override
-            public Theater mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Theater theater = new Theater();
-                theater.setId(rs.getInt("Theater_ID"));
-                theater.setName(rs.getString("Name"));
-                theater.setCityId(rs.getInt("City_ID"));
-                theater.setScreenCount(rs.getInt("Screen_Count"));
-
-                return theater;
-            }
-        });
+        return null;
     }
 
     public List<Theater> listTheatersByMovie(int cityId, int movieId){
-        String sql = "SELECT * FROM Theater";
-
-        return jdbcTemplate.query(sql, new RowMapper<Theater>() {
-            @Override
-            public Theater mapRow(ResultSet rs, int rowNum) throws SQLException {
-                Theater theater = new Theater();
-                theater.setId(rs.getInt("Theater_ID"));
-                theater.setName(rs.getString("Name"));
-                theater.setCityId(rs.getInt("City_ID"));
-                theater.setScreenCount(rs.getInt("Screen_Count"));
-
-                return theater;
-            }
-        });
+        return null;
     }
 }

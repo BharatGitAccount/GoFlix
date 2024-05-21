@@ -1,16 +1,26 @@
 package com.sapient.GoFlix.model;
 
+import jakarta.persistence.*;
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
+import java.util.Set;
+
+@Entity
 @Setter
 @Getter
-@ToString
+@Table(name = "Theater")
 public class Theater {
-    int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    int theaterId;
     String name;
-    int cityId;
     int screenCount;
+    String location;
 
+    @ManyToOne
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
+
+//    @OneToMany(mappedBy = "theater")
+//    private Set<MovieShow> movieShows;
 }
